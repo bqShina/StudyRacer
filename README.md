@@ -1,1 +1,1 @@
-# studyracer
+# StudyRacer
