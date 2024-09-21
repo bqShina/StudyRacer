@@ -9,20 +9,38 @@ interface LeaderboardEntry {
     dueDate: string;
 }
 
+interface LeaderboardProps {
+    selectedTask: { id: number; title: string; dueDate: string; completed: boolean } | null;
+}
+
 const leaderboardData: LeaderboardEntry[] = [
     { rank: 1, name: 'Alice', points: 1500, dueDate: '2024-04-15' },
-    { rank: 2, name: 'Bob', points: 1350, dueDate: '2024-04-18' },
-    { rank: 3, name: 'Charlie', points: 1200, dueDate: '2024-05-01' },
-    { rank: 4, name: 'David', points: 1100, dueDate: '2024-05-05' },
-    { rank: 5, name: 'Eve', points: 1000, dueDate: '2024-05-10' },
+    { rank: 2, name: 'Bob', points: 1350, dueDate: '2024-04-15' },
+    { rank: 3, name: 'Charlie', points: 1200, dueDate: '2024-04-15' },
+    { rank: 4, name: 'David', points: 1100, dueDate: '2024-04-15' },
+    { rank: 5, name: 'Eve', points: 1000, dueDate: '2024-04-15' },
+    { rank: 6, name: 'Frank', points: 950, dueDate: '2024-04-18' },
+    { rank: 7, name: 'Grace', points: 900, dueDate: '2024-04-18' },
+    { rank: 8, name: 'Hannah', points: 850, dueDate: '2024-04-18' },
+    { rank: 9, name: 'Ivy', points: 800, dueDate: '2024-04-18' },
+    { rank: 10, name: 'Jack', points: 750, dueDate: '2024-04-18' },
+    { rank: 11, name: 'Kevin', points: 700, dueDate: '2024-05-01' },
+    { rank: 12, name: 'Liam', points: 650, dueDate: '2024-05-01' },
+    { rank: 13, name: 'Mia', points: 600, dueDate: '2024-05-01' },
+    { rank: 14, name: 'Noah', points: 550, dueDate: '2024-05-01' },
+    { rank: 15, name: 'Olivia', points: 500, dueDate: '2024-05-01' },
 ];
 
-const Leaderboard: React.FC = () => {
+const Leaderboard: React.FC<LeaderboardProps> = ({ selectedTask }) => {
+    const filteredData = selectedTask
+        ? leaderboardData.filter(entry => entry.dueDate === selectedTask.dueDate).slice(0, 5)
+        : leaderboardData.slice(0, 5);
+
     return (
         <div className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 h-full">
             <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Leaderboard</h3>
             <ul>
-                {leaderboardData.map((entry) => (
+                {filteredData.map((entry) => (
                     <li key={entry.rank} className="mb-4 p-4 border-b last:border-b-0 border-gray-200 dark:border-gray-700">
                         <div className="flex items-center justify-between mb-2">
                             <div className="flex items-center">

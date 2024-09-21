@@ -7,19 +7,23 @@ interface Task {
     completed: boolean;
 }
 
+interface TaskListProps {
+    onSelectTask: (task: Task) => void;
+}
+
 const tasks: Task[] = [
     { id: 1, title: 'Assignment 1: Introduction to React', dueDate: '2024-04-15', completed: false },
     { id: 2, title: 'Quiz: JavaScript Basics', dueDate: '2024-04-18', completed: true },
     { id: 3, title: 'Group Project: Web App Development', dueDate: '2024-05-01', completed: false },
 ];
 
-const TaskList: React.FC = () => {
+const TaskList: React.FC<TaskListProps> = ({ onSelectTask }) => {
     return (
         <div className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 h-full">
             <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Upcoming Tasks</h3>
             <ul>
                 {tasks.map((task) => (
-                    <li key={task.id} className="mb-4 p-4 border-b last:border-b-0 border-gray-200 dark:border-gray-700">
+                    <li key={task.id} className="mb-4 p-4 border-b last:border-b-0 border-gray-200 dark:border-gray-700 cursor-pointer" onClick={() => onSelectTask(task)}>
                         <div className="flex items-center justify-between">
                             <div>
                                 <h4 className="font-semibold text-gray-900 dark:text-gray-100">{task.title}</h4>
