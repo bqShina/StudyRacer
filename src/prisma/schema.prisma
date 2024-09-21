@@ -28,3 +28,14 @@ model User {
   name     String
   password String
 }
+
+model Leaderboard {
+  user_id    Int
+  subtask_id Int
+  status     Boolean
+
+  user       User     @relation(fields: [user_id], references: [id])
+  subtask    Subtask  @relation(fields: [subtask_id], references: [id])
+
+  @@id([user_id, subtask_id]) // Composite primary key
+}
