@@ -53,9 +53,18 @@ Tech: Next.js
 
 ## 🚨 2 examples of generalised solutions to problems encountered during development
 
-Example 1:
+- Example 1:
 
-Example 2:
+- Example 2:
+
+## 🚀 Future Development
+- Integration with popular student tools like Canvas, Jira, and Notion.
+- Build extensions to support more personalized productivity tools.
+- Include AI-based suggestions for time management and task prioritization.
+
 
 ## 🎥 Video Demo
+
+
+
 
