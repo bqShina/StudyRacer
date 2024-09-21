@@ -8,7 +8,7 @@ const Header: React.FC = () => {
             <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
                 <ul className="flex space-x-4">
                     <li>
-                        <Link href="/" className="text-primary hover:text-secondary transition-colors">Home</Link>
+                        <Link href="/" className="text-primary hover:text-secondary transition-colors">Dashboard</Link>
                     </li>
                     <li>
                         <Link href="/assignments" className="text-primary hover:text-secondary transition-colors">Assignments</Link>
@@ -21,6 +21,9 @@ const Header: React.FC = () => {
                     </li>
                     <li>
                         <Link href="/signup" className="text-primary hover:text-secondary transition-colors">Sign Up</Link>
+                    </li>
+                    <li>
+                        <Link href="/signup" className="text-primary hover:text-secondary transition-colors">Log out</Link>
                     </li>
                 </ul>
                 <UserProfile />
