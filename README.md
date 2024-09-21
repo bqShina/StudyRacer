@@ -1,9 +1,13 @@
 # StudyRacer 🏁📚🐆💨..🐢 
-
+Homework has never been this exciting—move over, procrastination! 😎
  
 ## 🔗 Table of Contents
 1. [About the Project](#about-the-project)
-2. [Technology Stack](#technology-stack)
+2. [Problem Definition](#problem-definition)
+3. [Core Concept](#core-concept)
+4. [Technology Stack](#technology-stack)
+5. [General Solutions](#general-solutions)
+6. [Future Development](#future-development)
 
 
 ## 🔭 About the Project
