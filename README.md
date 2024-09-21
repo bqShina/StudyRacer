@@ -1,5 +1,7 @@
 # StudyRacer 🏁📚🐆💨..🐢 
 Homework has never been this exciting—move over, procrastination! 😎
+
+<img src="Img/Logo.png">
  
 ## 🔗 Table of Contents
 1. [About the Project](#about-the-project)
