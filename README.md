@@ -42,15 +42,11 @@ StudyRacer will incorporate elements of competition (leaderboards, progress trac
 - <img src="https://github.com/marwin1991/profile-technology-icons/assets/136815194/82df4543-236b-4e45-9604-5434e3faab17" width="50" height="50" >
 - <img src="https://github.com/marwin1991/profile-technology-icons/assets/136815194/5f8c622c-c217-4649-b0a9-7e0ee24bd704" width="50" height="50" >
 - <img src="https://user-images.githubusercontent.com/25181517/183568594-85e280a7-0d7e-4d1a-9028-c8c2209e073c.png" width="50" height="50" >
-- <img src="https://user-images.githubusercontent.com/25181517/183859966-a3462d8d-1bc7-4880-b353-e2cbed900ed6.png" width="50" height="50" >
-
-## Design:
-
-Figma
+- <img src="https://user-images.githubusercontent.com/25181517/202896760-337261ed-ee92-4979-84c4-d4b829c7355d.png" width="50" height="50" >
 
 ## Front-End Development:
 
-Tech: Next.js
+Tech: Next.js, Tailwind CSS
 
 ## Back-End Development:
 
@@ -103,9 +99,12 @@ Open your web browser and go to http://localhost:3000 to view the application.
 
 ## 🚨 2 examples of generalised solutions to problems encountered during development
 
-- Example 1:
+- Example 1: Gitwork - Resolving Merge Conflicts Efficiently
+While collaborating on StudyRacer, merge conflicts became a frequent issue when multiple team members worked on different features simultaneously. To solve this, we established a clear Git workflow, enforcing practices like frequent commits, pull requests, and code reviews before merging branches
 
-- Example 2:
+- Example 2: Learning Curve with Next.js - Overcoming Unfamiliarity with the Framework
+Several team members were new to Next.js, leading to slower development progress at the start. To address this, we created a learning plan that included online resources, video tutorials, and official Next.js documentation. Pair programming sessions and regular code reviews helped newer members understand key Next.js concepts like routing, API routes, and static site generation. Over time, everyone became comfortable with the framework, leading to smoother and faster development.
+
 
 ## 🚀 Future Development
 
