@@ -1,4 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
+import {prisma} from "@/prisma/client";
+
+export async function GET(  request: NextRequest,
+  { params }: { params: { id: string }}) {
+  const subTasks = await prisma.subtask.findMany({
+    where: { assignment_id: parseInt(params.id)}
+  })
+  return NextResponse.json(subTasks);
+}
+
 
 export async function PUT(
   request: NextRequest,
