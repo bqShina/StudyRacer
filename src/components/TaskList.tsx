@@ -1,27 +1,22 @@
 import React, { useState } from 'react';
 
-interface Task {
+interface SubTask {
     id: number;
-    title: string;
-    dueDate: string;
-    completed: boolean;
+    description: string;
+    assignment_id: number;
 }
 
 interface TaskListProps {
-    onSelectTask: (task: Task) => void;
+    tasks: SubTask[];
+    onSelectTask: (task: SubTask) => void;
+    assignmentName: string;
 }
 
-const initialTasks: Task[] = [
-    { id: 1, title: 'Assignment 1: Introduction to React', dueDate: '2024-04-15', completed: false },
-    { id: 2, title: 'Quiz: JavaScript Basics', dueDate: '2024-04-18', completed: true },
-    { id: 3, title: 'Group Project: Web App Development', dueDate: '2024-05-01', completed: false },
-];
-
-const TaskList: React.FC<TaskListProps> = ({ onSelectTask }) => {
-    const [tasks, setTasks] = useState<Task[]>(initialTasks);
+const TaskList: React.FC<TaskListProps> = ({ tasks, onSelectTask, assignmentName }) => {
+    const [taskList, setTaskList] = useState<SubTask[]>(tasks);
 
     const handleCheckboxChange = (taskId: number) => {
-        setTasks((prevTasks) =>
+        setTaskList((prevTasks) =>
             prevTasks.map((task) =>
                 task.id === taskId ? { ...task, completed: !task.completed } : task
             )
@@ -30,9 +25,8 @@ const TaskList: React.FC<TaskListProps> = ({ onSelectTask }) => {
 
     return (
         <div className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 h-full">
-            <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Upcoming Tasks</h3>
             <ul>
-                {tasks.map((task) => (
+                {taskList.map((task) => (
                     <li
                         key={task.id}
                         className="mb-4 p-4 border-b last:border-b-0 border-gray-200 dark:border-gray-700 cursor-pointer"
@@ -40,8 +34,7 @@ const TaskList: React.FC<TaskListProps> = ({ onSelectTask }) => {
                     >
                         <div className="flex items-center justify-between">
                             <div>
-                                <h4 className="font-semibold text-gray-900 dark:text-gray-100">{task.title}</h4>
-                                <p className="text-sm text-gray-600 dark:text-gray-400">Due: {task.dueDate}</p>
+                                <h4 className="font-semibold text-gray-900 dark:text-gray-100">{task.description}</h4>
                             </div>
                             <input
                                 type="checkbox"

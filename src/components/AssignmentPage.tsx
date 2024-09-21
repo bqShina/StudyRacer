@@ -4,30 +4,41 @@ import React, { useState } from 'react';
 import TaskList from './TaskList';
 import Leaderboard from './Leaderboard';
 
-interface Task {
+interface SubTask {
     id: number;
-    title: string;
-    dueDate: string;
-    completed: boolean;
+    description: string;
+    assignment_id: number;
 }
 
-const AssignmentPage: React.FC = () => {
-    const [selectedTask, setSelectedTask] = useState<Task | null>(null);
+interface Assignment {
+    id: number;
+    description: string;
+    subtasks: SubTask[];
+}
 
-    const handleSelectTask = (task: Task) => {
+interface Props {
+    assignments: Assignment[];
+}
+
+const AssignmentPage: React.FC<Props> = ({ assignments }) => {
+    const [selectedTask, setSelectedTask] = useState<SubTask | null>(null);
+
+    const handleSelectTask = (task: SubTask) => {
         setSelectedTask(task);
     };
 
     return (
-        <div className="flex-1 p-8">
-            <h2 className="text-2xl font-bold mb-6">Assignments</h2>
-            <div className="flex flex-col md:flex-row gap-8">
-                <div className="flex-1">
-                    <TaskList onSelectTask={handleSelectTask} />
-                </div>
-                <div className="flex-1">
-                    <Leaderboard selectedTask={selectedTask} />
-                </div>
+        <div className="flex-1 p-8 flex flex-col md:flex-row gap-8">
+            <div className="flex-1">
+                {assignments.map((assignment) => (
+                    <div key={assignment.id} className="mb-8">
+                        <h3 className="text-xl font-semibold mb-4">{assignment.description}</h3>
+                        <TaskList tasks={assignment.subtasks} onSelectTask={handleSelectTask} assignmentName={assignment.description} />
+                    </div>
+                ))}
+            </div>
+            <div className="w-full md:w-1/3">
+                <Leaderboard selectedTask={selectedTask} />
             </div>
         </div>
     );
