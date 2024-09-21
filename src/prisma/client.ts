@@ -1,13 +1,19 @@
 import { PrismaClient } from '@prisma/client';
 
-const prismaClientSingleton = () => {
+// Define the prismaClientSingleton function with the correct return type
+const prismaClientSingleton = (): PrismaClient => {
   return new PrismaClient();
 };
 
+// Extend the global object with Prisma type
 declare global {
-  var prisma: undefined | ReturnType<typeof prismaClientSingleton>;
+  // eslint-disable-next-line no-var
+  var prisma: PrismaClient | undefined;
 }
 
-export const prisma = globalThis.prisma ?? prismaClientSingleton();
+// Export the prisma instance
+export const prisma: PrismaClient =
+  globalThis.prisma ?? prismaClientSingleton();
 
+// In non-production environments, attach the Prisma client to the global object to avoid recreating it
 if (process.env.NODE_ENV !== 'production') globalThis.prisma = prisma;

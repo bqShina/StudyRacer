@@ -11,22 +11,25 @@ datasource db {
 }
 
 model Subtask {
-  id            Int      @id @default(autoincrement())
+  id            Int           @id @default(autoincrement())
   description   String
   assignment_id Int?
-  assignment    Assignment? @relation(fields: [assignment_id], references: [id])
+  assignment    Assignment?   @relation(fields: [assignment_id], references: [id])
+  leaderboards  Leaderboard[]
 }
 
 model Assignment {
-  id       Int       @id @default(autoincrement())
-  subtasks Subtask[]
+  id          Int       @id @default(autoincrement())
+  description String
+  subtasks    Subtask[]
 }
 
 model User {
-  id       Int    @id @default(autoincrement())
-  email    String @unique
-  name     String
-  password String
+  id           Int           @id @default(autoincrement())
+  email        String        @unique
+  name         String
+  password     String
+  leaderboards Leaderboard[]
 }
 
 model Leaderboard {
@@ -34,8 +37,8 @@ model Leaderboard {
   subtask_id Int
   status     Boolean
 
-  user       User     @relation(fields: [user_id], references: [id])
-  subtask    Subtask  @relation(fields: [subtask_id], references: [id])
+  user    User    @relation(fields: [user_id], references: [id])
+  subtask Subtask @relation(fields: [subtask_id], references: [id])
 
   @@id([user_id, subtask_id]) // Composite primary key
 }
