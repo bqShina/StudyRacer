@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FiHome, FiBook, FiAward, FiLogIn, FiUserPlus, FiChevronRight, FiChevronLeft } from 'react-icons/fi';
+import { FiHome, FiBook, FiAward, FiChevronRight, FiChevronLeft, FiUser } from 'react-icons/fi';
+import { useSidebar } from './SidebarContext';
 
 const Sidebar: React.FC = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const { isOpen, setIsOpen } = useSidebar();
 
     const handleToggle = () => {
         setIsOpen(!isOpen);
@@ -16,8 +17,7 @@ const Sidebar: React.FC = () => {
         { icon: FiHome, text: 'Dashboard', href: '/dashboard' },
         { icon: FiBook, text: 'Assignments', href: '/assignments' },
         { icon: FiAward, text: 'Leaderboard', href: '/leaderboard' },
-        { icon: FiLogIn, text: 'Login', href: '/login' },
-        { icon: FiUserPlus, text: 'Sign Up', href: '/signup' },
+        { icon: FiUser, text: 'Profile', href: '/profile' },
     ];
 
     return (
@@ -34,23 +34,13 @@ const Sidebar: React.FC = () => {
             </button>
             <div className="flex flex-col h-full">
                 <div className={`p-4 flex justify-center items-center ${isOpen ? 'mb-6' : 'mb-4'}`}>
-                    {isOpen ? (
-                        <Image
-                            src="/StudyRacer_Banner.png"
-                            alt="StudyRacer Banner"
-                            width={200}
-                            height={60}
-                            className="transition-all duration-300"
-                        />
-                    ) : (
-                        <Image
-                            src="/logo_notext.png"
-                            alt="StudyRacer Logo"
-                            width={40}
-                            height={40}
-                            className="transition-all duration-300"
-                        />
-                    )}
+                    <Image
+                        src={isOpen ? "/StudyRacer_Banner.png" : "/logo_notext.png"}
+                        alt="Project Logo"
+                        width={isOpen ? 200 : 40}
+                        height={isOpen ? 60 : 40}
+                        className="transition-all duration-300"
+                    />
                 </div>
                 <div className="flex-grow overflow-y-auto">
                     <ul>
@@ -63,7 +53,7 @@ const Sidebar: React.FC = () => {
                                     }`}
                                 >
                                     <item.icon className={`text-xl ${isOpen ? 'mr-3' : ''}`} />
-                                    <span className={`whitespace-nowrap ${isOpen ? 'opacity-100' : 'opacity-0 w-0'} transition-all duration-300`}>
+                                    <span className={`whitespace-nowrap transition-all duration-300 ${isOpen ? 'opacity-100 w-auto' : 'opacity-0 w-0'}`}>
                                         {item.text}
                                     </span>
                                 </Link>
