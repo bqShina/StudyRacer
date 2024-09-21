@@ -31,5 +31,5 @@ Tech: Next.js
 
 3. AI Integration:
 
-- OpenAI LLM (Large Language Model for AI-driven features, such as task recommendations, progress suggestions, etc.)
+- OpenAI gpt 4o: (Large Language Model for cross verification when a student submits a draft and declares a checkpoint has been completed)
 
