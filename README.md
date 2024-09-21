@@ -42,14 +42,11 @@ StudyRacer will incorporate elements of competition (leaderboards, progress trac
 - <img src="https://github.com/marwin1991/profile-technology-icons/assets/136815194/82df4543-236b-4e45-9604-5434e3faab17" width="50" height="50" >
 - <img src="https://github.com/marwin1991/profile-technology-icons/assets/136815194/5f8c622c-c217-4649-b0a9-7e0ee24bd704" width="50" height="50" >
 - <img src="https://user-images.githubusercontent.com/25181517/183568594-85e280a7-0d7e-4d1a-9028-c8c2209e073c.png" width="50" height="50" >
-
-## Design:
-
-Figma
+- <img src="https://user-images.githubusercontent.com/25181517/202896760-337261ed-ee92-4979-84c4-d4b829c7355d.png" width="50" height="50" >
 
 ## Front-End Development:
 
-Tech: Next.js
+Tech: Next.js, Tailwind CSS
 
 ## Back-End Development:
 
