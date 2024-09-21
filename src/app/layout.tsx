@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="flex flex-grow ml-20 transition-all duration-300 p-4">
             <main className="flex-grow">{children}</main>
         </div>
-        <Footer />
+        <Footer/>
         </body>
         </html>
     );
