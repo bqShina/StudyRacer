@@ -113,3 +113,5 @@ Several team members were new to Next.js, leading to slower development progress
 - Include AI-based suggestions for time management and task prioritization.
 
 ## 🎥 Video Demo
+
+https://youtu.be/_Bulh_exZsA?si=ms2umZoUMWzFOSGr
