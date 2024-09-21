@@ -7,7 +7,7 @@ Developers
 
 
 ## 🔭 About the Project
-
+StudyRacer is a web app designed to engage students in managing their academic tasks. By gamifying homework, it transforms studying into a competitive race, making it enjoyable and motivating. The app tracks progress and provides insights, helping students meet their deadlines effectively.
 
 ## Problem Definition
 Students struggle with time management, leading to missed deadlines and poor academic performance. StudyRacer helps students stay on top of their work by tracking progress and turning homework into a fun, competitive experience.
