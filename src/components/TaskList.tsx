@@ -15,7 +15,7 @@ const tasks: Task[] = [
 
 const TaskList: React.FC = () => {
     return (
-        <div className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
+        <div className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 h-full">
             <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Upcoming Tasks</h3>
             <ul>
                 {tasks.map((task) => (
