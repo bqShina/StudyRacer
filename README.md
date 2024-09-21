@@ -16,6 +16,8 @@ StudyRacer is a web app designed to engage students in managing their academic t
 ## 💭 Problem Definition
 Students struggle with time management, leading to missed deadlines and poor academic performance. StudyRacer helps students stay on top of their work by tracking progress and turning homework into a fun, competitive experience.
 
+👥 Target Audience: Students who struggle with time management.
+
 🎯 Main Goal: Encourage students to complete assignments efficiently by making the process engaging and motivating.
 
 ## 💡 Core Concept
