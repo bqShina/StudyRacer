@@ -31,10 +31,8 @@ const leaderboardData: LeaderboardEntry[] = [
     { rank: 15, name: 'Olivia', points: 500, dueDate: '2024-05-01' },
 ];
 
-const Leaderboard: React.FC<LeaderboardProps> = ({ selectedTask }) => {
-    const filteredData = selectedTask
-        ? leaderboardData.filter(entry => entry.dueDate === selectedTask.dueDate).slice(0, 5)
-        : leaderboardData.slice(0, 5);
+const Leaderboard: React.FC<LeaderboardProps> = () => {
+    const filteredData = leaderboardData.slice(0, 5);
 
     return (
         <div className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 h-full">
