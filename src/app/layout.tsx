@@ -3,6 +3,7 @@ import { GeistSans } from 'geist/font/sans';
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Sidebar from "../components/Sidebar";
 
 export const metadata: Metadata = {
     title: "StudyRacer - Gamified Learning Platform",
@@ -14,7 +15,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="en">
         <body className={`${GeistSans.className} flex flex-col min-h-screen`}>
         <Header />
-        <main className="flex-grow">{children}</main>
+        <div className="flex flex-grow">
+            <Sidebar />
+            <main className="flex-grow">{children}</main>
+        </div>
         <Footer />
         </body>
         </html>
