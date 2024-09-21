@@ -1,6 +1,6 @@
 // src/pages/assignments/_middleware.js
 
-import { getSession } from 'next-auth/client';
+import { getSession } from 'next-auth/react';
 
 export async function middleware(req, ev) {
     const session = await getSession({ req });
