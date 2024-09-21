@@ -16,6 +16,12 @@ const Header: React.FC = () => {
                     <li>
                         <Link href="/leaderboard" className="text-primary hover:text-secondary transition-colors">Leaderboard</Link>
                     </li>
+                    <li>
+                        <Link href="/login" className="text-primary hover:text-secondary transition-colors">Login</Link>
+                    </li>
+                    <li>
+                        <Link href="/signup" className="text-primary hover:text-secondary transition-colors">Sign Up</Link>
+                    </li>
                 </ul>
                 <UserProfile />
             </nav>
